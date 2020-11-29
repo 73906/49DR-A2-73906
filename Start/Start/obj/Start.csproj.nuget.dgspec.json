@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Aleksander\\source\\repos\\73906_Aleksander\\49DR73906\\Start\\Start\\Start.csproj": {}
+    "C:\\Users\\Aleksander\\source\\repos\\73906_Aleksander\\49DR73906l\\Start\\Start\\Start.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Aleksander\\source\\repos\\73906_Aleksander\\49DR73906\\Start\\Start\\Start.csproj": {
+    "C:\\Users\\Aleksander\\source\\repos\\73906_Aleksander\\49DR73906l\\Start\\Start\\Start.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Aleksander\\source\\repos\\73906_Aleksander\\49DR73906\\Start\\Start\\Start.csproj",
+        "projectUniqueName": "C:\\Users\\Aleksander\\source\\repos\\73906_Aleksander\\49DR73906l\\Start\\Start\\Start.csproj",
         "projectName": "Start",
-        "projectPath": "C:\\Users\\Aleksander\\source\\repos\\73906_Aleksander\\49DR73906\\Start\\Start\\Start.csproj",
+        "projectPath": "C:\\Users\\Aleksander\\source\\repos\\73906_Aleksander\\49DR73906l\\Start\\Start\\Start.csproj",
         "packagesPath": "C:\\Users\\Aleksander\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Aleksander\\source\\repos\\73906_Aleksander\\49DR73906\\Start\\Start\\obj\\",
+        "outputPath": "C:\\Users\\Aleksander\\source\\repos\\73906_Aleksander\\49DR73906l\\Start\\Start\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Aleksander\\AppData\\Roaming\\NuGet\\NuGet.Config",
