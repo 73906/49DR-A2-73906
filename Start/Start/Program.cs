@@ -53,13 +53,22 @@ namespace Start
                     Console.Clear();
                     if (kupon.Count > 0) 
                     {
-
+                        int wygrana = Sprawdz(kupon);
+                        if (wygrana >0)
+                        {
+                            Console.WriteLine("Wygrales {0}zł w tym losowaniu", wygrana);
+                            pieniadze += wygrana;
+                        }
+                        else
+                        {
+                            Console.WriteLine("\nNiestety nie wygrales");
+                        }
                     }
                     else
                     {
                         Console.Write("Brak losow");
                     }
-                    Console.ReadKey();
+                    Console.ReadKey();// czy przeczytal
 
 
                 } while (pieniadze >= 4 && wybor != ConsoleKey.D3); //d3 klawisz 3 by zakonczyc
@@ -71,6 +80,11 @@ namespace Start
           
         }
 
+        private static int Sprawdz(List<int[]> kupon)
+        {
+            throw new NotImplementedException();
+        }
+
         private static int[] PostawLos()
         {
             throw new NotImplementedException();
@@ -78,7 +92,26 @@ namespace Start
 
         private static void Wyswietlkupon(List<int[]> kupon)
         {
-            throw new NotImplementedException();
+           if(kupon.Count == 0)
+            {
+                Console.WriteLine("Nie postwiles nic");
+            }
+            else
+            {
+                int i = 0;
+                Console.WriteLine("\nTwoj kupon: ");
+                foreach (int[] los in kupon)
+                {
+                    i++;
+                    Console.WriteLine(i + ": ");
+                    foreach (int liczba in los)
+                    {
+                        Console.WriteLine(liczba + ", ");
+                    }
+                    Console.WriteLine();
+                }
+
+            }
         }
     }
 }
