@@ -37,10 +37,10 @@ namespace Start
                         //menu
                         if (pieniadze >= 4 && losow < 8)
                         { 
-                        Console.WriteLine("1 - Postaw los - 4zl [{0}/8", losow + 1 );
+                        Console.WriteLine("1 - Postaw los - 4zl [{0}/8]", losow + 1 );
                         }
                         Console.WriteLine("2 - Losowanie");
-                        Console.WriteLine("3 Zakoncz Gre");
+                        Console.WriteLine("3 - Zakoncz Gre");
                         //
                         wybor = Console.ReadKey().Key;
                         if (wybor == ConsoleKey.D1 && pieniadze >= 4 && losow < 8)
@@ -87,7 +87,38 @@ namespace Start
 
         private static int[] PostawLos()
         {
-            throw new NotImplementedException();
+            int[] liczby = new int[6];
+            int liczba = -1;
+            for (int i = 0; i < liczby.Length; i++) 
+            {
+                liczba = -1;
+                Console.Clear();
+                Console.WriteLine("Postawione liczby: ");
+                foreach (int l in liczby)
+                {
+                    if (l > 0)
+                    {
+                        Console.WriteLine(l + ", ");
+                    }
+                }
+                Console.WriteLine("\n\nWybierz liczbe od 1 do 49");
+                Console.WriteLine("{0}/6: ", i + 1) ;
+                bool prawidlowa = int.TryParse(Console.ReadLine(), out liczba); //czy liczba, zakres
+                if(prawidlowa && liczba >=1 && liczba <=49 && !liczby.Contains(liczba))
+                {
+                    liczby[i] = liczba;
+
+                }
+                else
+                {
+                    Console.WriteLine("Bledna liczba");
+                    i--;
+                    Console.ReadKey();
+                }
+
+            }
+            Array.Sort(liczby);
+            return liczby;
         }
 
         private static void Wyswietlkupon(List<int[]> kupon)
