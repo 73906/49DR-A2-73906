@@ -82,9 +82,111 @@ namespace Start
 
         private static int Sprawdz(List<int[]> kupon)
         {
-            throw new NotImplementedException();
+            int wygrana = 0;
+            int[] wylosowane = new int[6];
+            for (int i = 0; i < wylosowane.Length; i++)
+            {
+                int los = rnd.Next(1, 50);
+                if (!wylosowane.Contains(los))
+                {
+                    wylosowane[i] = los;
+                }
+                else
+                {
+                    i--;
+                }
+             }
+            Array.Sort(wylosowane);
+            Console.WriteLine("Wylosowane liczby : ");
+
+            foreach (int liczba in wylosowane)
+            {
+                Console.WriteLine(liczba + ", ");
+            }
+            int[] trafione = SprawdzKupon(kupon, wylosowane);
+            int wartosc = 0;
+           // int wygrana = 0;
+
+            Console.WriteLine();
+            if (trafione[0] > 0)//3 trafienia
+            {
+                wartosc = trafione[0] * 24; 
+                Console.WriteLine("3 Trafione : {0} +{1}zl", trafione[0], wartosc);
+                wygrana += wartosc;                          
+            }
+            if (trafione[1] > 0)//4trafienia
+            {
+                wartosc = trafione[1] * rnd.Next(150, 300) ;
+                Console.WriteLine("4 Trafione : {0} +{1}zl", trafione[1], wartosc);
+                wygrana += wartosc;
+            }
+            if (trafione[2] > 0)//5trafienia
+            {
+                wartosc = trafione[2] * rnd.Next(5000, 9000);
+                Console.WriteLine("5 Trafione : {0} +{1}zl", trafione[2], wartosc);
+                wygrana += wartosc;
+            }
+            if (trafione[3] > 0)//6trafienia
+            {
+                wartosc = (trafione[3] * kumulacja) / trafione[3] + rnd.Next(0, 5);
+                Console.WriteLine("6 Trafione : {0} +{1}zl", trafione[3], wartosc);
+                wygrana += wartosc;
+            }
+
+
+
+
+            return wygrana;
         }
 
+        private static int[] SprawdzKupon(List<int[]> kupon, int[] wylosowane)
+        {
+            int[] wygrane = new int[4];
+            int i = 0;
+            Console.WriteLine("\n\nTwoj kupon: ");
+            foreach (int[] los in kupon)
+            {
+                i++;
+                Console.WriteLine(i + ": ");
+                int trafien = 0;
+                foreach (int liczba in los)
+                {
+                    if (wylosowane.Contains(liczba))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(liczba + ", ");
+                        Console.ResetColor();
+                        trafien++;
+
+                    }
+                    else
+                    {
+                        Console.WriteLine(liczba + ", ");
+                    }
+                }
+            switch (trafien)
+                {
+                    case 3:
+                        wygrane[0]++;
+                        break;
+                    case 4:
+                        wygrane[1]++;
+                        break;
+                    case 5:
+                        wygrane[2]++;
+                        break;
+                    case 6:
+                        wygrane[3]++;
+                        break;
+                }
+                Console.WriteLine(" - Trafiono {0}/6", trafien);
+
+            }
+                        
+           return wygrane;
+        }
+
+        
         private static int[] PostawLos()
         {
             int[] liczby = new int[6];
