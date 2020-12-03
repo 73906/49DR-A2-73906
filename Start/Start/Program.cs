@@ -74,7 +74,7 @@ namespace Start
                 } while (pieniadze >= 4 && wybor != ConsoleKey.D3); //d3 klawisz 3 by zakonczyc
 
                 Console.Clear();
-                Console.WriteLine("Dzien {0}. \nKoniec gry, twoja wygrana to:{1}zl  ", dzien, pieniadze - START);
+                Console.WriteLine("Dzien {0}. \nKoniec gry, twoje saldo to:{1}zl  ", dzien, pieniadze - START);
             } while (Console.ReadKey().Key == ConsoleKey.Enter);
 
           
