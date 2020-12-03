@@ -1,4 +1,21 @@
-﻿using System;
+﻿/*
+Gra Lotto
+Gra odzwierciedla popularną grę w Polsce "Lotto", zasady są praktycznie identyczne.
+Gracz ma na początek gry 24zł, jest to budżet który może wykorzystać na zakłady.
+Gracz musi obstawić 6 cyfr od 1 do 49 - jest to jeden zaklad, 
+Maksymalnie podczas jednego losowania może obstawić 8 zakładów jeżeli posiada środki.
+Jeżeli gracz trafi 3 cyfry wygrywa 24 zł 
+Jeżeli gracz trafi 4 cyfry wygrywa od 151zł do 299zł 
+Jeżeli gracz trafi 5 cyfr wygrywa od 5000zł do 8999zł
+Jeżeli gracz trafi 6 cyfr, wygrywa główną kwote (kumulacje)*
+
+
+
+*Kumalacja nie musi być 100% kumulacji, gdyż może trafić 6 trafień więcej niż jedna osoba.
+
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,7 +57,7 @@ namespace Start
                         Console.WriteLine("1 - Postaw los - 4zl [{0}/8]", losow + 1 );
                         }
                         Console.WriteLine("2 - Losowanie");
-                        Console.WriteLine("3 - Zakoncz Gre");
+                        Console.WriteLine("3 - Zakoncz Gre i zacznij od nowa.");
                         //
                         wybor = Console.ReadKey().Key;
                         if (wybor == ConsoleKey.D1 && pieniadze >= 4 && losow < 8)
